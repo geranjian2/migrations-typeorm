@@ -3,15 +3,15 @@ import { DataSource } from "typeorm"
 import { User } from "./entity/User.js"
 
 export const AppDataSource = new DataSource({
-    type: "postgres",
+    type: "mysql",
     host: "localhost",
-    port: 5432,
-    username: "test",
-    password: "test",
-    database: "test",
+    port: 3306,
+    username: "root",
+    password: "123456",
+    database: "simi",
     synchronize: true,
     logging: false,
-    entities: [User],
-    migrations: [process.cwd() + '/src/migrations/*.ts'],
+    entities: ['./src/entity/*.ts'],
+    migrations: ['./src/migrations/*.ts'],
     subscribers: [],
 })
